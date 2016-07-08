@@ -1,0 +1,21 @@
+*** Setting ***
+Documentation     Test Google
+Library           Selenium2Library
+Suite Teardown     Close Browser
+
+*** Variables   ***
+${KEYSEARCH}        egg digital
+${URL}              ${EMPTY}
+
+
+*** Test Cases ***
+Open Browser Google
+    Open Browser                http://google.com 
+    Wait Until Page Contains    Google    10
+Search
+    Search Information
+*** Keywords ***
+Search Information
+	Input Text    q    ${KEYSEARCH}
+	Click Button    btnG
+	Wait Until Page Contains    Egg Digital    10
